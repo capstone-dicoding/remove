@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Restoran App',
+      title: 'Remove',
       theme: ThemeData(
         scaffoldBackgroundColor: kSecondaryColor,
         colorScheme: Theme.of(context).colorScheme.copyWith(
