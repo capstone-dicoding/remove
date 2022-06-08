@@ -28,10 +28,6 @@ class MovieDashboard extends StatelessWidget {
                     ),
                   ),
                 );
-                // return DetailResto(
-                //   restoData: restoData,
-                //   resto: resto,
-                // );
               } else if (state.state == ResultState.noData) {
                 return const Expanded(
                   child: Center(
