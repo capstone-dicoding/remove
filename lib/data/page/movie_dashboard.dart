@@ -24,7 +24,7 @@ class MovieDashboard extends StatelessWidget {
                 return const Expanded(
                   child: Center(
                     child: Center(
-                      child: Text('GET DATA'),
+                      child: Text('GET DATAA'),
                     ),
                   ),
                 );
