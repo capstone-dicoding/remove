@@ -24,7 +24,7 @@ class MovieDashboard extends StatelessWidget {
                 return const Expanded(
                   child: Center(
                     child: Center(
-                      child: Text('GET DATAA'),
+                      child: Text('GETTTT DATAA'),
                     ),
                   ),
                 );
@@ -32,14 +32,14 @@ class MovieDashboard extends StatelessWidget {
                 return const Expanded(
                   child: Center(
                     child: Center(
-                      child: Text('no internet'),
+                      child: Text('nO internet'),
                     ),
                   ),
                 );
               } else if (state.state == ResultState.error) {
                 return const Expanded(
                   child: Center(
-                    child: Text('Errorrr'),
+                    child: Text('Errorrrrrrrrr'),
                   ),
                 );
               } else {
