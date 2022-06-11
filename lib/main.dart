@@ -7,6 +7,7 @@ import 'package:remove/data/page/home_page.dart';
 import 'package:remove/data/page/login_page.dart';
 import 'package:remove/data/page/splashscreen.dart';
 import 'package:remove/data/provider/movie_provider.dart';
+import 'package:remove/data/page/signUp_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -56,6 +57,7 @@ class MyApp extends StatelessWidget {
           SplashScreen.routeName: (context) => const SplashScreen(),
           LoginPage.routeName: (context) => const LoginPage(),
           HomePage.routeName: (context) => const HomePage(),
+          SignUpPage.routeName: (context) => const SignUpPage(),
         },
         debugShowCheckedModeBanner: false,
       ),
