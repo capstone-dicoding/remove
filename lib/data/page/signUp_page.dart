@@ -34,7 +34,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       const SizedBox(
                         height: 5,
                       ),
-                      Text('Sign Up now, and find your favorite movies!',
+                      const Text('Sign Up now, and find your favorite movies!',
                           style: TextStyle(
                             fontSize: 15,
                             color: kTextLightColor,
