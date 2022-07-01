@@ -39,8 +39,8 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
               currentAccountPicture: CircleAvatar(
                 backgroundImage: AssetImage('assets/circle-g.png'),
               ),
-              accountName: Text('Ditonton'),
-              accountEmail: Text('ditonton@dicoding.com'),
+              accountName: Text('Remove'),
+              accountEmail: Text('remove@cpsg75.com'),
             ),
             ListTile(
               leading: Icon(Icons.movie),
@@ -74,7 +74,7 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
         ),
       ),
       appBar: AppBar(
-        title: Text('Ditonton'),
+        title: Text('Remove'),
         actions: [
           IconButton(
             onPressed: () {

@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
 import 'package:provider/provider.dart';
 import 'package:remove/common/theme.dart';
-import 'package:remove/data/api/api_service.dart';
 import 'package:remove/data/page/home_page.dart';
 import 'package:remove/data/page/login_page.dart';
-import 'package:remove/data/page/splashscreen.dart';
-import 'package:remove/data/provider/movie_provider.dart';
 import 'package:remove/data/page/signUp_page.dart';
+import 'package:remove/data/page/splashscreen.dart';
+import 'package:remove/injection.dart' as di;
+import 'package:remove/presentation/pages/home_movie_page.dart';
+import 'package:remove/presentation/provider/movie_detail_notifier.dart';
+import 'package:remove/presentation/provider/movie_search_notifier.dart';
+import 'package:remove/presentation/provider/popular_movies_notifier.dart';
+import 'package:remove/presentation/provider/top_rated_movies_notifier.dart';
+import 'package:remove/presentation/provider/watchlist_movie_notifier.dart';
+
+import 'presentation/provider/movie_list_notifier.dart';
 
 void main() {
+  di.init();
   runApp(const MyApp());
 }
 
@@ -20,9 +27,27 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
+        // ChangeNotifierProvider(
+        //   create: (_) =>
+        //       MovieProvider(apiService: ApiService(Client()), client: ''),
+        // ),
         ChangeNotifierProvider(
-          create: (_) =>
-              MovieProvider(apiService: ApiService(Client()), client: ''),
+          create: (_) => di.locator<MovieListNotifier>(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => di.locator<MovieDetailNotifier>(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => di.locator<MovieSearchNotifier>(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => di.locator<TopRatedMoviesNotifier>(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => di.locator<PopularMoviesNotifier>(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => di.locator<WatchlistMovieNotifier>(),
         ),
       ],
       child: MaterialApp(
@@ -56,7 +81,7 @@ class MyApp extends StatelessWidget {
         routes: {
           SplashScreen.routeName: (context) => const SplashScreen(),
           LoginPage.routeName: (context) => const LoginPage(),
-          HomePage.routeName: (context) => const HomePage(),
+          HomePage.routeName: (context) => HomeMoviePage(),
           SignUpPage.routeName: (context) => const SignUpPage(),
         },
         debugShowCheckedModeBanner: false,
