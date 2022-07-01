@@ -1,4 +1,5 @@
 import 'package:remove/data/datasources/db/database_helper.dart';
+import 'package:remove/data/datasources/movie/movie_local_data_source.dart';
 import 'package:remove/data/datasources/movie/movie_remote_data_source.dart';
 import 'package:remove/data/repositories/movie_repository_impl.dart';
 import 'package:remove/domain/repositories/movie_repository.dart';
@@ -85,6 +86,8 @@ void init() {
   // data sources
   locator.registerLazySingleton<MovieRemoteDataSource>(
       () => MovieRemoteDataSourceImpl(client: locator()));
+  locator.registerLazySingleton<MovieLocalDataSource>(
+      () => MovieLocalDataSourceImpl(databaseHelper: locator()));
 
   // helper
   locator.registerLazySingleton<DatabaseHelper>(() => DatabaseHelper());
