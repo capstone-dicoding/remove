@@ -13,6 +13,8 @@ import 'package:remove/presentation/pages/watchlist_movies_page.dart';
 import 'package:remove/presentation/provider/movie_list_notifier.dart';
 
 class HomeMoviePage extends StatefulWidget {
+  const HomeMoviePage({Key? key}) : super(key: key);
+
   @override
   _HomeMoviePageState createState() => _HomeMoviePageState();
   static const ROUTE_NAME = '/home';
@@ -35,7 +37,7 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
       drawer: Drawer(
         child: Column(
           children: [
-            UserAccountsDrawerHeader(
+            const UserAccountsDrawerHeader(
               currentAccountPicture: CircleAvatar(
                 backgroundImage: AssetImage('assets/circle-g.png'),
               ),
@@ -43,19 +45,19 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
               accountEmail: Text('remove@cpsg75.com'),
             ),
             ListTile(
-              leading: Icon(Icons.movie),
-              title: Text('Movies'),
+              leading: const Icon(Icons.movie),
+              title: const Text('Movies'),
               onTap: () {
                 Navigator.pop(context);
               },
             ),
             ExpansionTile(
-              title: Text('Watchlist'),
-              leading: Icon(Icons.save_alt),
+              title: const Text('Watchlist'),
+              leading: const Icon(Icons.save_alt),
               children: <Widget>[
                 ListTile(
-                  leading: Icon(Icons.movie),
-                  title: Text('Movie'),
+                  leading: const Icon(Icons.movie),
+                  title: const Text('Movie'),
                   onTap: () {
                     Navigator.pushNamed(
                         context, WatchlistMoviesPage.ROUTE_NAME);
@@ -67,20 +69,20 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
               onTap: () {
                 Navigator.pushNamed(context, AboutPage.ROUTE_NAME);
               },
-              leading: Icon(Icons.info_outline),
-              title: Text('About'),
+              leading: const Icon(Icons.info_outline),
+              title: const Text('About'),
             ),
           ],
         ),
       ),
       appBar: AppBar(
-        title: Text('Remove'),
+        title: const Text('Remove'),
         actions: [
           IconButton(
             onPressed: () {
               Navigator.pushNamed(context, SearchPage.ROUTE_NAME);
             },
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
           )
         ],
       ),
@@ -97,13 +99,13 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
               Consumer<MovieListNotifier>(builder: (context, data, child) {
                 final state = data.nowPlayingState;
                 if (state == RequestState.Loading) {
-                  return Center(
+                  return const Center(
                     child: CircularProgressIndicator(),
                   );
                 } else if (state == RequestState.Loaded) {
                   return MovieList(data.nowPlayingMovies);
                 } else {
-                  return Text('Failed');
+                  return const Text('Failed');
                 }
               }),
               _buildSubHeading(
@@ -114,13 +116,13 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
               Consumer<MovieListNotifier>(builder: (context, data, child) {
                 final state = data.popularMoviesState;
                 if (state == RequestState.Loading) {
-                  return Center(
+                  return const Center(
                     child: CircularProgressIndicator(),
                   );
                 } else if (state == RequestState.Loaded) {
                   return MovieList(data.popularMovies);
                 } else {
-                  return Text('Failed');
+                  return const Text('Failed');
                 }
               }),
               _buildSubHeading(
@@ -131,13 +133,13 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
               Consumer<MovieListNotifier>(builder: (context, data, child) {
                 final state = data.topRatedMoviesState;
                 if (state == RequestState.Loading) {
-                  return Center(
+                  return const Center(
                     child: CircularProgressIndicator(),
                   );
                 } else if (state == RequestState.Loaded) {
                   return MovieList(data.topRatedMovies);
                 } else {
-                  return Text('Failed');
+                  return const Text('Failed');
                 }
               }),
             ],
@@ -193,13 +195,13 @@ class MovieList extends StatelessWidget {
                 );
               },
               child: ClipRRect(
-                borderRadius: BorderRadius.all(Radius.circular(16)),
+                borderRadius: const BorderRadius.all(Radius.circular(16)),
                 child: CachedNetworkImage(
                   imageUrl: '$BASE_IMAGE_URL${movie.posterPath}',
-                  placeholder: (context, url) => Center(
+                  placeholder: (context, url) => const Center(
                     child: CircularProgressIndicator(),
                   ),
-                  errorWidget: (context, url, error) => Icon(Icons.error),
+                  errorWidget: (context, url, error) => const Icon(Icons.error),
                 ),
               ),
             ),

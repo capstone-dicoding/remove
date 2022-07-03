@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:remove/common/theme.dart';
 import 'package:remove/data/page/home_page.dart';
 import 'package:remove/data/page/signUp_page.dart';
+import 'package:remove/presentation/pages/home_movie_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -46,7 +47,7 @@ class _LoginPageState extends State<LoginPage> {
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                     borderSide:
-                    const BorderSide(width: 3, color: kPrimaryColor),
+                        const BorderSide(width: 3, color: kPrimaryColor),
                   ),
                   focusedBorder: const OutlineInputBorder(
                     borderSide: BorderSide(width: 3, color: kPrimaryColor),
@@ -69,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                     borderSide:
-                    const BorderSide(width: 3, color: kPrimaryColor),
+                        const BorderSide(width: 3, color: kPrimaryColor),
                   ),
                   focusedBorder: const OutlineInputBorder(
                     borderSide: BorderSide(width: 3, color: kPrimaryColor),
@@ -112,7 +113,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: MaterialButton(
                   onPressed: () => Navigator.pushNamed(
                     context,
-                    HomePage.routeName,
+                    HomeMoviePage.ROUTE_NAME,
                   ),
                   color: kPrimaryColor,
                   child: const Text(
