@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:remove/common/constants.dart';
 import 'package:remove/common/theme.dart';
-import 'package:remove/data/page/home_page.dart';
 import 'package:remove/data/page/signUp_page.dart';
 import 'package:remove/presentation/pages/home_movie_page.dart';
 
