@@ -1,4 +1,5 @@
 import 'package:remove/common/constants.dart';
+import 'package:remove/data/page/login_page.dart';
 import 'package:remove/presentation/pages/home_movie_page.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +14,8 @@ class BottomBar extends StatefulWidget {
 class _BottomBarState extends State<BottomBar> {
   int currentIndex = 0;
   final List<Widget> screens = [
-    const HomeMoviePage(),
+    // const HomeMoviePage(),
+    const LoginPage(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -28,31 +30,17 @@ class _BottomBarState extends State<BottomBar> {
         currentIndex: currentIndex,
         onTap: (index) => setState(() => currentIndex = index),
         items: const [
-          // BottomNavigationBarItem(
-          //   icon: Icon(Icons.movie),
-          //   label: 'Movies',
-          //   backgroundColor: kDavysGrey,
-          // ),
-          // BottomNavigationBarItem(
-          //   icon: Icon(Icons.tv),
-          //   label: 'Tv',
-          //   backgroundColor: kDavysGrey,
-          // ),
           BottomNavigationBarItem(
             icon: Icon(Icons.movie),
             label: 'Movies',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.topic),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.notifications),
-            label: '',
+            label: 'Playing',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle),
-            label: '',
+            label: 'Profile',
           ),
         ],
       ),

@@ -1,3 +1,4 @@
+import 'package:remove/common/constants.dart';
 import 'package:remove/common/state_enum.dart';
 import 'package:remove/common/utils.dart';
 import 'package:remove/presentation/provider/watchlist_movie_notifier.dart';
@@ -6,9 +7,13 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class WatchlistMoviesPage extends StatefulWidget {
+  // ignore: constant_identifier_names
   static const ROUTE_NAME = '/watchlist-movie';
 
+  const WatchlistMoviesPage({Key? key}) : super(key: key);
+
   @override
+  // ignore: library_private_types_in_public_api
   _WatchlistMoviesPageState createState() => _WatchlistMoviesPageState();
 }
 
@@ -28,6 +33,7 @@ class _WatchlistMoviesPageState extends State<WatchlistMoviesPage>
     routeObserver.subscribe(this, ModalRoute.of(context)!);
   }
 
+  @override
   void didPopNext() {
     Provider.of<WatchlistMovieNotifier>(context, listen: false)
         .fetchWatchlistMovies();
@@ -37,14 +43,17 @@ class _WatchlistMoviesPageState extends State<WatchlistMoviesPage>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Watchlist Movie'),
+        title: Text(
+          'Watchlist Movie',
+          style: kHeading7,
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Consumer<WatchlistMovieNotifier>(
           builder: (context, data, child) {
             if (data.watchlistState == RequestState.Loading) {
-              return Center(
+              return const Center(
                 child: CircularProgressIndicator(),
               );
             } else if (data.watchlistState == RequestState.Loaded) {
@@ -57,7 +66,7 @@ class _WatchlistMoviesPageState extends State<WatchlistMoviesPage>
               );
             } else {
               return Center(
-                key: Key('error_message'),
+                key: const Key('error_message'),
                 child: Text(data.message),
               );
             }

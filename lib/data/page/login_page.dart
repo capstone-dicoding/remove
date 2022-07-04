@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:remove/common/constants.dart';
 import 'package:remove/common/theme.dart';
 import 'package:remove/data/page/home_page.dart';
 import 'package:remove/data/page/signUp_page.dart';
@@ -8,10 +9,10 @@ import 'package:remove/presentation/pages/home_movie_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
-  static const routeName = '/login_page';
 
   @override
   State<LoginPage> createState() => _LoginPageState();
+  static const routeName = '/login_page';
 }
 
 class _LoginPageState extends State<LoginPage> {
@@ -57,7 +58,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   labelText: 'Type your email address',
                   labelStyle: const TextStyle(
-                      fontFamily: 'poppins', color: kTextLightColor),
+                      fontFamily: 'poppins', color: Colors.white),
                 ),
               ),
               const SizedBox(
@@ -79,8 +80,8 @@ class _LoginPageState extends State<LoginPage> {
                     borderSide: BorderSide(width: 3, color: kPrimaryColor),
                   ),
                   labelText: 'Type your password',
-                  labelStyle: const TextStyle(
-                      fontFamily: 'poppins', color: kTextLightColor),
+                  labelStyle:
+                      const TextStyle(fontFamily: 'poppins', color: kWhite),
                 ),
               ),
               Row(

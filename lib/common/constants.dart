@@ -10,6 +10,7 @@ const Color kPrussianBlue = Color(0xFF003566);
 const Color kMikadoYellow = Color(0xFFffc300);
 const Color kDavysGrey = Color(0xFF4B5358);
 const Color kGrey = Color(0xFF303030);
+const Color kWhite = Color.fromARGB(234, 228, 235, 240);
 
 // text style
 final TextStyle kHeading5 =
@@ -20,6 +21,11 @@ final TextStyle kSubtitle = GoogleFonts.poppins(
     fontSize: 15, fontWeight: FontWeight.w400, letterSpacing: 0.15);
 final TextStyle kBodyText = GoogleFonts.poppins(
     fontSize: 13, fontWeight: FontWeight.w400, letterSpacing: 0.25);
+final TextStyle kHeading7 = GoogleFonts.poppins(
+    fontSize: 13,
+    fontWeight: FontWeight.w400,
+    letterSpacing: 0.25,
+    color: Colors.white);
 
 // text theme
 final kTextTheme = TextTheme(

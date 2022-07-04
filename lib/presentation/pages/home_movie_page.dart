@@ -16,7 +16,9 @@ class HomeMoviePage extends StatefulWidget {
   const HomeMoviePage({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _HomeMoviePageState createState() => _HomeMoviePageState();
+  // ignore: constant_identifier_names
   static const ROUTE_NAME = '/home';
 }
 
@@ -39,7 +41,7 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
           children: [
             const UserAccountsDrawerHeader(
               currentAccountPicture: CircleAvatar(
-                backgroundImage: AssetImage('assets/circle-g.png'),
+                backgroundImage: AssetImage("assets/logo_login.png"),
               ),
               accountName: Text('Remove'),
               accountEmail: Text('remove@cpsg75.com'),
@@ -57,7 +59,8 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
               children: <Widget>[
                 ListTile(
                   leading: const Icon(Icons.movie),
-                  title: const Text('Movie'),
+                  title: const Text('Movie',
+                      style: TextStyle(color: Colors.white)),
                   onTap: () {
                     Navigator.pushNamed(
                         context, WatchlistMoviesPage.ROUTE_NAME);
@@ -76,7 +79,10 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
         ),
       ),
       appBar: AppBar(
-        title: const Text('Remove'),
+        title: const Text(
+          'Remove',
+          style: TextStyle(color: Colors.white),
+        ),
         actions: [
           IconButton(
             onPressed: () {
@@ -93,8 +99,8 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Now Playing Movies',
-                style: kHeading6,
+                'Recomended',
+                style: kHeading7,
               ),
               Consumer<MovieListNotifier>(builder: (context, data, child) {
                 final state = data.nowPlayingState;
@@ -109,7 +115,7 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
                 }
               }),
               _buildSubHeading(
-                title: 'Popular Movies',
+                title: 'Now Playing',
                 onTap: () =>
                     Navigator.pushNamed(context, PopularMoviesPage.ROUTE_NAME),
               ),
@@ -155,14 +161,23 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
       children: [
         Text(
           title,
-          style: kHeading6,
+          style: kHeading7,
         ),
         InkWell(
           onTap: onTap,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
-              children: [Text('See More'), Icon(Icons.arrow_forward_ios)],
+              children: [
+                Text(
+                  'See More',
+                  style: kHeading7,
+                ),
+                const Icon(
+                  Icons.arrow_forward_ios,
+                  color: Colors.white,
+                )
+              ],
             ),
           ),
         ),
@@ -174,11 +189,12 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
 class MovieList extends StatelessWidget {
   final List<Movie> movies;
 
-  MovieList(this.movies);
+  // ignore: prefer_const_constructors_in_immutables
+  MovieList(this.movies, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 200,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
