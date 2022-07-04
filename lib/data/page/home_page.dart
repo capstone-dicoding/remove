@@ -23,19 +23,19 @@ class _HomePageState extends State<HomePage> {
   final List<BottomNavigationBarItem> _bottomNavBarItems = [
     const BottomNavigationBarItem(
       icon: Icon(Icons.movie),
-      label: '',
+      label: 'Home',
     ),
     const BottomNavigationBarItem(
-      icon: Icon(Icons.topic),
-      label: '',
+      icon: Icon(Icons.video_library),
+      label: 'Watchlist',
     ),
     const BottomNavigationBarItem(
       icon: Icon(Icons.notifications),
-      label: '',
+      label: 'Notifications',
     ),
     const BottomNavigationBarItem(
       icon: Icon(Icons.account_circle),
-      label: '',
+      label: 'Account',
     ),
   ];
 

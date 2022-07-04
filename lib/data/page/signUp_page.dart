@@ -3,6 +3,7 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:remove/common/theme.dart';
 import 'package:remove/data/page/home_page.dart';
+import 'package:remove/data/page/login_page.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
@@ -182,7 +183,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         child: MaterialButton(
                           onPressed: () => Navigator.pushNamed(
                             context,
-                            HomePage.routeName,
+                            LoginPage.routeName,
                           ),
                           color: kPrimaryColor,
                           child: const Text(
