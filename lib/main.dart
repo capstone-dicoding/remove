@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:remove/common/theme.dart';
 import 'package:remove/common/utils.dart';
 import 'package:remove/data/page/login_page.dart';
+import 'package:remove/data/page/signUp_page.dart';
 import 'package:remove/injection.dart' as di;
 import 'package:remove/presentation/pages/home_movie_page.dart';
 import 'package:remove/presentation/pages/movie_detail_page.dart';
@@ -103,6 +104,10 @@ class MyApp extends StatelessWidget {
             case WatchlistMoviesPage.ROUTE_NAME:
               return CupertinoPageRoute(
                   builder: (_) => const WatchlistMoviesPage());
+            case SignUpPage.routeName:
+              return CupertinoPageRoute(builder: (_) => const SignUpPage());
+            case LoginPage.routeName:
+              return CupertinoPageRoute(builder: (_) => const LoginPage());
             default:
               return MaterialPageRoute(builder: (_) {
                 return const Scaffold(
